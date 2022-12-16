@@ -8,5 +8,5 @@ export async function connectToMongoDB() {
 
 export async function insertDocument(client, database, collection, document) {
   const db = client.db(database);
-  await db.collection(collection).insertOne(document);
+  return await db.collection(collection).insertOne(document);
 }

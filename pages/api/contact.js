@@ -19,17 +19,20 @@ async function handler(req, res) {
 
     try {
       client = await connectToMongoDB();
-    } catch(error) {
-      res.status(500).json({ message: 'Connection Error!' })
+    } catch (error) {
+      res.status(500).json({ message: 'Connection Error!' });
       return;
     }
 
     try {
-      const result = await insertDocument(client, 'my-blog', 'messages', newMessage);
+      const result = await insertDocument(
+        client,
+        'my-blog',
+        'messages',
+        newMessage
+      );
       newMessage._id = result.insertedId;
-      res
-        .status(201)
-        .json({ message: 'New message added!', data: newMessage });
+      res.status(201).json({ message: 'New message added!', data: newMessage });
     } catch (error) {
       res
         .status(500)
