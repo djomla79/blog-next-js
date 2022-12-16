@@ -7,7 +7,7 @@ function AboutMe() {
     <section className={classes.about}>
       <div className={classes.image}>
         <Image
-          src='/images/site/profile-picture.jpg'
+          src='/images/site/profile_picture.jpg'
           alt='An image'
           width={250}
           height={250}
